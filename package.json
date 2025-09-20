@@ -1,9 +1,9 @@
 {
   "name": "@kkingsbe/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.36.0",
     "eslint-plugin-jsdoc": "^60.0.0",
     "eslint-plugin-prettier": "^5.5.4",
