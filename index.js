@@ -35,6 +35,21 @@ export default [
     ...tseslint.configs.recommendedTypeChecked,
     eslintPluginPrettierRecommended,
     {
+        rules: {
+            'prettier/prettier': [
+                'error',
+                {
+                    endOfLine: 'auto',
+                    printWidth: 80,
+                    tabWidth: 2,
+                    semi: true,
+                    singleQuote: true,
+                    trailingComma: 'es5',
+                }
+            ],
+        },
+    },
+    {
         languageOptions: {
             globals: {
                 ...globals.node,
