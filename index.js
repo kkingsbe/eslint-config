@@ -7,6 +7,9 @@ import sonarjs from 'eslint-plugin-sonarjs'
 import jsdoc from 'eslint-plugin-jsdoc';
 
 export default [
+    {
+        files: ['**/*.ts', '**/.*.ts'],
+    },
     jsdoc.configs['flat/recommended-typescript'],
     {
         rules: {
