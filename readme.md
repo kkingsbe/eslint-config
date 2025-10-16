@@ -50,6 +50,12 @@ Make sure you have these dependencies installed:
 npm install --save-dev eslint typescript
 ```
 
+### Optional Peer Dependencies
+If using this config with Angular, you will need to run the following:
+```bash
+npm install -d angular-eslint
+```
+
 ## Configuration Details
 
 ### Included Plugins & Configs
