@@ -1,17 +1,24 @@
 {
   "name": "@kkingsbe/eslint-config",
-  "version": "1.0.8",
+  "version": "1.0.81",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "@eslint/js": "^9.36.0",
-    "angular-eslint": "^20.4.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsdoc": "^60.0.0",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-sonarjs": "^3.0.5",
     "globals": "^16.4.0",
     "typescript-eslint": "^8.44.0"
+  },
+  "peerDependencies": {
+    "angular-eslint": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "angular-eslint": {
+      "optional": true
+    }
   },
   "keywords": [
     "eslint",
