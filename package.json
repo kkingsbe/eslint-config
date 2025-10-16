@@ -1,10 +1,11 @@
 {
   "name": "@kkingsbe/eslint-config",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "@eslint/js": "^9.36.0",
+    "angular-eslint": "^20.4.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsdoc": "^60.0.0",
     "eslint-plugin-prettier": "^5.5.4",

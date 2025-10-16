@@ -5,8 +5,56 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import sonarjs from 'eslint-plugin-sonarjs'
 import jsdoc from 'eslint-plugin-jsdoc';
+import angular from 'angular-eslint';
 
-export default [
+const isAngularProject = (() => {
+    try {
+        require.resolve('@angular/core');
+        return true;
+    } catch {
+        return false;
+    }
+})();
+
+const angularConfigs = isAngularProject ? [
+    {
+        files: ['**/*.ts'],
+        processor: angular.processInlineTemplates,
+        rules: {
+            "@angular-eslint/directive-selector": ["error", {
+                type: "attribute",
+                prefix: "app",
+                style: "camelCase"
+            }],
+            "@angular-eslint/component-selector": ["error", {
+                type: "element",
+                style: "kebab-case"
+            }]
+        }
+    },
+    {
+        files: ['**/*.html'],
+        extends: [
+            ...angular.configs.templateRecommended,
+            ...angular.configs.templateAccessibility,
+        ],
+        rules: {
+            "@angular-eslint/template/click-events-have-key-events": 'off',
+            "@angular-eslint/template/interactive-supports-focus": 'off',
+            "@angular-eslint/template/prefer-control-flow": [
+                "error"
+            ],
+            "@angular-eslint/template/prefer-self-closing-tags": [
+                "warn"
+            ],
+            "@angular-eslint/template/attributes-order": [
+                "error"
+            ]
+        },
+    }
+] : [];
+
+const typescriptConfigs = [
     {
         files: ['**/*.ts', '**/.*.ts'],
     },
@@ -87,4 +135,9 @@ export default [
             ]
         },
     },
+]
+
+export default [
+    ...typescriptConfigs,
+    ...angularConfigs
 ]
